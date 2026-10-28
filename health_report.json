@@ -1,0 +1,11 @@
+{
+    "Hostname": "Krish",
+    "User": "krish\\sreelakshmi",
+    "Uptime": "Not Available",
+    "Disk": "Not Available",
+    "Memory": "Not Available",
+    "Git": "git version 2.52.0.windows.1",
+    "Python": "Not Available",
+    "AWS": "aws-cli/2.34.0 Python/3.13.11 Windows/11 exe/AMD64",
+    "Docker": "Docker version 28.3.2, build 578ccf6"
+}

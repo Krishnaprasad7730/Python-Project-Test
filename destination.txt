@@ -1,0 +1,152 @@
+Linux Administrator Basic Level
+1. What is Linux?
+Answer:
+Linux is an open-source operating system based on the Unix architecture. It is widely used in
+servers, cloud environments, enterprise applications, and production systems because of its stability
+and security. Linux allows multiple users to work on the same system simultaneously while
+maintaining proper access control. One major advantage of Linux is that it is customizable, meaning
+administrators can install only the required components and services. In production environments,
+Linux is commonly used to host applications, databases, and middleware services.
+2. What is the Linux Kernel?
+Answer:
+The Linux kernel is the core component of the Linux operating system that directly interacts with
+the system hardware. It manages system resources such as CPU, memory, storage devices, and
+network interfaces. The kernel also handles process scheduling, device communication, and
+memory allocation. Whenever a user runs a command or application, the request is processed
+through the kernel. In production systems, kernel stability and compatibility are critical because
+kernel failures can affect the entire system.
+3. What is a Linux Distribution? Give examples.
+Answer:
+A Linux distribution (also called a distro) is a complete operating system that includes the Linux
+kernel along with software packages, tools, libraries, and utilities. Different distributions are
+designed for different use cases such as servers, desktops, or enterprise environments. Common
+Linux distributions include Red Hat Enterprise Linux (RHEL), Oracle Linux, Ubuntu, and CentOS.
+In enterprise environments, distributions like RHEL and Oracle Linux are preferred because they
+provide long-term support, security patches, and enterprise-level tools.
+4. How do you check the Linux OS version and kernel
+version?
+Answer:
+There are multiple commands available to check the operating system and kernel version in Linux.
+The command cat /etc/os-release provides detailed OS information such as version and
+distribution name. The command uname -r shows the current running kernel version, which is
+useful during troubleshooting and patching. Another useful command is hostnamectl, which
+displays system information including OS and architecture. In production, these commands are
+commonly used before applying patches or installing new software to verify compatibility.
+5. What is a Shell in Linux?
+Answer:
+A shell in Linux is a command-line interface that allows users to communicate with the operating
+system. It takes user commands, processes them, and sends them to the kernel for execution. The
+most commonly used shell is Bash (Bourne Again Shell), but other shells like sh, ksh, and zsh are
+also available. Shells support scripting, which allows administrators to automate repetitive tasks
+such as backups or monitoring. In production environments, shell scripts are frequently used to
+automate daily maintenance activities.
+6. What is the root user in Linux?
+Answer:
+The root user is the superuser in Linux who has complete control over the system. This user can
+install software, modify system configurations, create users, and manage system resources. Because
+root has full permissions, misuse of root access can cause system failures or security issues. In
+production environments, administrators usually avoid direct root login and instead use sudo to
+execute privileged commands. This helps maintain security and provides proper logging of
+administrative actions.
+7. What is the difference between root user and normal user?
+Answer:
+The root user has unrestricted access to all files, commands, and configurations on the system,
+whereas a normal user has limited access based on assigned permissions. Normal users cannot
+modify system-level configurations unless granted specific privileges. Root users can install
+packages, start or stop services, and manage system security settings. In production environments,
+normal users are used for daily operations, while root access is restricted to administrative tasks.
+This separation improves system security and prevents accidental changes.
+8. What is the Linux file system?
+Answer:
+The Linux file system is the way Linux organizes and stores data on storage devices such as hard
+disks. It follows a hierarchical structure that starts from the root directory (/). All files, directories,
+and devices are stored under this structure. Common file system types include ext4, xfs, and btrfs.
+In production systems, administrators manage file systems carefully to ensure proper storage
+allocation, performance, and reliability.
+9. Explain the Linux directory structure.
+Answer:
+Linux follows a standard directory structure that organizes files into specific locations. For
+example, /etc stores configuration files, /var contains logs and variable data, and /home stores
+user directories. The /bin and /usr/bin directories contain executable binaries used by the
+system and users. Understanding this structure helps administrators quickly locate configuration
+files and troubleshoot issues. In production, knowing the directory structure is essential for system
+maintenance and recovery tasks.
+10. What is the purpose of the /etc directory?
+Answer:
+The /etc directory stores system-wide configuration files required by the operating system and
+installed services. These configuration files define how services behave, how users authenticate,
+and how the system boots. Examples include network configuration files, user authentication
+settings, and service configuration files. Administrators frequently modify files in /etc to
+configure services like NFS, Samba, and cron. Proper backup of this directory is important because
+incorrect changes can affect system functionality.
+11. What is the /var directory used for?
+Answer:
+The /var directory stores variable data that changes frequently during system operation. This
+includes log files, mail queues, spool files, temporary files, and application data. For example,
+system logs are stored in /var/log, which is one of the most important locations for
+troubleshooting production issues. Administrators regularly monitor this directory to check system
+logs, disk usage, and application behavior. If /var becomes full, many services may stop working,
+so it must be monitored carefully.
+12. What is the /home directory used for?
+Answer:
+The /home directory contains personal directories for each user on the system. Each user has a
+separate directory under /home, such as /home/user1, where their files, settings, and
+configurations are stored. This structure allows multiple users to work on the same system while
+keeping their data isolated. Administrators often manage disk quotas and permissions in this
+directory to control storage usage. Backups of /home are important because it contains user data.
+13. What is the difference between absolute
+path and relative path?
+Answer:
+An absolute path starts from the root directory (/) and specifies the complete location of a file or
+directory. For example, /home/user1/file.txt is an absolute path. A relative path starts from
+the current working directory instead of the root directory. For example, if you are in
+/home/user1, you can access the file using file.txt. Absolute paths are preferred in scripts
+and automation because they avoid confusion and ensure correct file access.
+14. What is the pwd command used for?
+Answer:
+The pwd command stands for "print working directory" and displays the current directory path
+where the user is working. It helps users understand their location in the file system hierarchy. This
+command is especially useful when navigating through multiple directories. In production
+environments, administrators use pwd to confirm their working location before executing important
+commands. This prevents accidental changes in the wrong directory.
+15. What is the ls command used for?
+Answer:
+The ls command is used to list files and directories in a given location. It provides information
+about file names, permissions, size, and modification dates. Common options include ls -l for
+detailed listing and ls -a to show hidden files. Administrators frequently use ls to verify file
+existence and check directory contents. It is one of the most commonly used commands in daily
+Linux administration tasks.
+16. What is the cd command used for?
+Answer:
+The cd command stands for "change directory" and is used to navigate between directories in the
+file system. For example, cd /etc moves the user to the /etc directory. The command cd ..
+moves one level up, and cd ~ takes the user to their home directory. This command is essential for
+navigating system directories during configuration or troubleshooting. Administrators use cd
+frequently when managing files and logs.
+17. What is the mkdir command used for?
+Answer:
+The mkdir command is used to create new directories in Linux. For example, mkdir testdir
+creates a directory named testdir. Multiple directories can be created at once using mkdir -p,
+which also creates parent directories if they do not exist. This command is commonly used during
+application setup or file organization. Administrators use it when preparing directory structures for
+services and backups.
+18. What is the rm command used for?
+Answer:
+The rm command is used to delete files and directories from the system. For example, rm
+file.txt deletes a file, while rm -r directory removes a directory and its contents. The
+option rm -f forces deletion without confirmation. This command should be used carefully
+because deleted files cannot be recovered easily. In production environments, administrators
+double-check before running recursive delete commands.
+19. What is the cp command used for?
+Answer:
+The cp command is used to copy files and directories from one location to another. For example,
+cp file1 file2 creates a copy of file1 as file2. The option cp -r is used to copy directories
+recursively. Administrators commonly use cp to create backups of configuration files before
+making changes. This helps in restoring the original configuration if errors occur.
+20. What is the mv command used for?
+Answer:
+The mv command is used to move or rename files and directories. For example, mv file1
+file2 renames file1 to file2. It can also move files from one directory to another. This command
+is frequently used when organizing files or updating configuration file names. Administrators also
+use it during log rotation and backup processes.
+

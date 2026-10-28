@@ -1,0 +1,6 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+krishna     6204  300  0.1   8288  4096 pts/0    R+   14:05   0:00 ps aux --sort=-%cpu
+root         217  0.1  1.2 2089932 46676 ?       Ssl  07:42   0:36 /usr/bin/containerd
+root          94  0.0  0.1  25284  6272 ?        Ss   07:42   0:08 /usr/lib/systemd/systemd-udevd
+root        6088  0.0  0.3 1756628 12928 ?       Ssl  13:55   0:00 /usr/libexec/wsl-pro-service
+root           1  0.0  0.3  22088 12392 ?        Ss   07:42   0:06 /sbin/init

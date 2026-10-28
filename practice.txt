@@ -1,0 +1,35 @@
+Hello world
+This is a new line 
+
+#!/bin/bash
+
+# Configuration
+THRESHOLD=90
+EMAIL="karanamkrishna7730@gmail.com.com"
+HOSTNAME=$(hostname)
+
+# Get the current CPU idle percentage using 'top' in batch mode (2 iterations for accuracy)
+# Then calculate: 100 - idle = current CPU usage
+CPU_IDLE=$(top -bn2 -d 0.5 | grep "%Cpu" | tail -n 1 | awk '{print $8}')
+
+# Convert to an integer for comparison (handles both comma and dot decimals)
+CPU_IDLE_INT=${CPU_IDLE%.*}
+#CPU_USAGE=$((100 - CPU_IDLE_INT))
+CPU_USAGE=$1
+
+# Check if usage exceeds the threshold
+if [ "$CPU_USAGE" -gt "$THRESHOLD" ]; then
+    # Fetch the top 5 CPU-consuming processes for the email body
+    TOP_PROCESSES=$(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 6)
+
+    # Construct and send the email
+    SUBJECT="CRITICAL: High CPU Usage Detected on $HOSTNAME"
+    BODY="Warning: CPU usage has exceeded the threshold!
+Current Usage: $CPU_USAGE%
+Threshold: $THRESHOLD%
+
+Top 5 CPU Consuming Processes:
+$TOP_PROCESSES"
+
+    echo "$BODY" | mail -s "$SUBJECT" "$EMAIL"
+fi

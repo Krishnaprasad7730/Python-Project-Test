@@ -1,0 +1,7 @@
+S.No          Name        Gender          Mobile                    City
+1.          Krishna        King        +91-9553320743               Ggp
+2.           Siri          Female       +9191898942                 Ggp
+3.          Harsha          King         +91226548945               Ggp
+4.           Balaji Rao    King         +91548948489                Ggp
+5.           Geetha         Female       +91541181                  Ggp
+6.         HarshaPadmini    Female       +914111516565              Brp  
